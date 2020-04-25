@@ -124,8 +124,8 @@ async function playSong(msg) {
 	if (!serverQueue) return;
 	if (serverQueue.songs.length < 1) {
 		serverQueue.voiceChannel.leave();
-    	queues.delete(msg.guild.id);
-    	return msg.channel.send("Hết nhạc!");
+    		queues.delete(msg.guild.id);
+    		return msg.channel.send("Hết nhạc!");
 	}
 	let song = serverQueue.songs[0];
 	let dispatcher = serverQueue.connection.play(ytdl(song.url, {filter: 'audioonly', highWaterMark: 1<<25, type: 'opus'}));
