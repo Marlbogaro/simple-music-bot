@@ -19,7 +19,7 @@ class Queue {
 class Song {
     constructor(title, url) {
         this.title = title;
-		this.url = url;
+	this.url = url;
     }
 }
 
