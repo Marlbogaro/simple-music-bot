@@ -38,7 +38,7 @@ client.on('message', async msg => {
 		if (command === 'play') {
 			let voiceChannel = msg.member.voice.channel;
 			if (!voiceChannel) return msg.reply("Vào kênh âm nhạc trước đã!");
-			let permissions = msg.member.voice.channel.permissionsFor(client.user);
+			let permissions = voiceChannel.permissionsFor(client.user);
 			if (!permissions.has('CONNECT')||!permissions.has('SPEAK')) return msg.reply("Thiếu quyền vào kênh âm nhạc hoặc phát nhạc!");
 			let url = args.slice(1).join(' ');
 			let video = await ytdl.getInfo(url);
