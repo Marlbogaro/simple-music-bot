@@ -34,7 +34,7 @@ client.on('message', async msg => {
 
 	if (msg.content.startsWith(prefix)) {
 		const args = msg.content.slice(prefix.length).split(/ +/);
-		const command = args[0];
+		const command = args[0].toLowerCase();
 		if (command === 'play') {
 			let voiceChannel = msg.member.voice.channel;
 			if (!voiceChannel) return msg.reply("Vào kênh âm nhạc trước đã!");
